@@ -7,31 +7,42 @@
 请补全下面的函数，实现文件的读取和写入功能。
 """
 
+
 def read_file(file_path):
     """
     读取文本文件内容
-    
+
     参数:
     - file_path: 文件路径
-    
+
     返回:
     - 文件内容字符串
     """
     # 请在下方编写代码
     # 使用open()函数打开文件并读取内容
+    with open(file_path, "r") as file:
+        content = file.read()
+    return content
     pass
+
 
 def write_file(file_path, content):
     """
     写入内容到文本文件
-    
+
     参数:
     - file_path: 文件路径
     - content: 要写入的内容
-    
+
     返回:
     - 是否写入成功的布尔值
     """
     # 请在下方编写代码
     # 使用with语句和open()函数写入内容到文件
-    pass 
+    with open(file_path, "w") as file:
+        len = file.write(content)
+        if len > 0:
+            return True
+        else:
+            return False
+    pass
